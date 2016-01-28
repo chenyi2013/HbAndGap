@@ -4,8 +4,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.JsPromptResult;
@@ -34,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             String url = (String) msg.obj;
             url = url.replace("\"", "");
             webView.loadUrl(url.toString().trim());
+//            webView.loadUrl("http://172.16.0.106:8080/tj-phone");
         }
     };
 
@@ -41,17 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         webView = (WebView) findViewById(R.id.webView);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         setWebView();
@@ -86,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
         // 设置出现缩放工具
         webSettings.setBuiltInZoomControls(false);
-        webSettings.setDefaultFontSize(20);
+        webSettings.setDefaultFontSize(16);
 
-
+        webView.addJavascriptInterface(new AndroidJavaScript(this),"AndroidWebView");
         // 设置WebViewClient
         webView.setWebViewClient(new WebViewClient() {
             // url拦截
