@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(false);
         webSettings.setDefaultFontSize(16);
 
-        webView.addJavascriptInterface(new AndroidJavaScript(this),"AndroidWebView");
+        webView.addJavascriptInterface(new AndroidJavaScript(this), "AndroidWebView");
         // 设置WebViewClient
         webView.setWebViewClient(new WebViewClient() {
             // url拦截
@@ -127,16 +127,12 @@ public class MainActivity extends AppCompatActivity {
                 return super.onJsAlert(view, url, message, result);
             }
 
-            ;
-
             @Override
             // 处理javascript中的confirm
             public boolean onJsConfirm(WebView view, String url,
                                        String message, final JsResult result) {
                 return super.onJsConfirm(view, url, message, result);
             }
-
-            ;
 
             @Override
             // 处理javascript中的prompt
@@ -145,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onJsPrompt(view, url, message, defaultValue,
                         result);
             }
-
-            ;
 
             // 设置网页加载的进度条
             @Override
