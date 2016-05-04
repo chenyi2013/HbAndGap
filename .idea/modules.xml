@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HbAndGap.iml" filepath="$PROJECT_DIR$/HbAndGap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/andbase/andbase.iml" filepath="$PROJECT_DIR$/andbase/andbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anddemo/anddemo.iml" filepath="$PROJECT_DIR$/anddemo/anddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
     </modules>
